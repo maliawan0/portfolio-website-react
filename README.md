@@ -1,12 +1,44 @@
-# React + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My personal portfolio site — React + Vite + Tailwind CSS. Built for a Web Programming assignment and kept as my live portfolio.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Routed pages** — Home, About, Projects, Contact, plus a data-entry view
+- **Data-driven project cards** — projects come from [`src/assets/data.json`](src/assets/data.json), so adding one is a JSON edit rather than a component change
+- **Animated gradient background** — custom `Gradient` component
+- **Responsive layout** throughout, via Tailwind
 
-## Expanding the ESLint configuration
+## Stack
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+React 18 · Vite · React Router · Tailwind CSS · ESLint
+
+## Layout
+
+```
+src/
+  Pages/       # Home, About, Projects, Contact, DataEntry
+  Components/  # Navbar, Footer, ProjectCard, Gradient
+  assets/
+    data.json  # project entries rendered by ProjectCard
+  main.jsx     # entry
+```
+
+## Running it locally
+
+```bash
+npm install
+npm run dev
+```
+
+Vite serves at `http://localhost:5173`.
+
+```bash
+npm run build     # production build to dist/
+npm run preview   # preview the build
+npm run lint      # ESLint
+```
+
+## Adding a project
+
+Append an entry to `src/assets/data.json` — the Projects page maps over it and renders a `ProjectCard` for each. No component changes needed.
